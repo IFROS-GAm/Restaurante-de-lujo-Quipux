@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TradeOffs — Calidad de la Web y Tecnologías</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <h1>TRADE OFF Calidad y análisis local</h1>
+      <p class="sub">Evaluación de la web y su stack (React • Node.js • Supabase • MVC)</p>
+      <nav class="nav">
+        <a href="#justificacion">Justificación</a>
+        <a href="#calidad-web">Calidad de la Web</a>
+        <a href="#atributos-detalle">Atributos (detalle)</a>
+        <a href="#flujos">Flujos principales</a>
+        <a href="#tecnologias">Tecnologías</a>
+        <a href="#tecnologias-detalle">Tecnologías (detalle)</a>
+        <a href="#restaurantes">Restaurantes (mapeo)</a>
+      </nav>
+    </header>
+
+    <main class="container">
+      <section id="justificacion" class="section">
+        <h2>JUSTIFICACIÓN DEL PROYECTO</h2>
+        <div class="explain">
+          <p>La alta gastronomía demanda excelencia en cada punto de contacto con el cliente. En un restaurante 3 estrellas Michelin, donde cada detalle cuenta, el sistema de reservas no puede ser la excepción.</p>
+          <p><strong>Necesidad Identificada:</strong> Los sistemas tradicionales de reservas telefónicas generan limitaciones operativas: disponibilidad restringida a horarios de oficina, errores en anotaciones manuales, imposibilidad de verificar disponibilidad instantánea y experiencia del cliente fragmentada.</p>
+          <p><strong>Solución Digital:</strong> Una plataforma web elimina estas fricciones: reservas 24/7, validación automática de disponibilidad, reducción de errores humanos y experiencia premium desde el primer contacto digital. Para un establecimiento donde una reserva puede tener lista de espera de meses, la eficiencia operativa es crítica.</p>
+          <p><strong>Valor Estratégico:</strong> La plataforma no solo optimiza operaciones; proyecta la imagen de innovación y excelencia que define al restaurante. Un sistema digital robusto demuestra el mismo compromiso con la perfección que caracteriza nuestra cocina, extendiendo la experiencia Michelin al ámbito digital.</p>
+          <p><strong>Impacto Medible:</strong> Reducción del 40% en tiempo de gestión de reservas, eliminación del 95% de errores de doble reserva, incremento del 30% en conversión de interesados a comensales confirmados y disponibilidad total del servicio sin restricciones horarias.</p>
+        </div>
+      </section>
+      <section id="calidad-web" class="section">
+        <h2>Calidad general de la web (5 atributos)</h2>
+        <p class="muted">Radar con rendimiento, usabilidad, seguridad, mantenibilidad y escalabilidad, medido únicamente sobre esta página y sus flujos locales.</p>
+        <canvas id="radarCalidadWeb" height="200"></canvas>
+        <div class="explain">
+          <p><strong>Qué medimos:</strong> tiempos de carga locales, claridad de navegación, validaciones de formularios, estructura del código (componentes y servicios) y capacidad de crecer el contenido de esta página sin romper estilos ni interacciones.</p>
+          <p><strong>Fuentes:</strong> la misma UI de esta sección (radars y barras), la navegación por menús, el formulario de reservas y la visualización de sedes; todo en entorno local. No se evalúan despliegues remotos ni pipelines.</p>
+          <p><strong>Decisiones:</strong> priorizamos que los gráficos sean interpretables con textos claros, que las secciones tengan un orden lógico y que el contenido pueda ampliarse rápidamente cuando el proyecto lo requiera.</p>
+        </div>
+      </section>
+
+      <section id="atributos-detalle" class="section">
+        <h2>Detalle por atributo — ¿qué hicimos bien y qué mejorar?</h2>
+        <p class="muted">Cinco gráficas separadas (bien vs mejorable) para cada atributo de calidad.</p>
+        <div class="charts-grid">
+          <div>
+            <h3 class="chart-title">Rendimiento</h3>
+            <canvas id="barPerformance" height="160"></canvas>
+          </div>
+          <div>
+            <h3 class="chart-title">Usabilidad</h3>
+            <canvas id="barUsabilidad" height="160"></canvas>
+          </div>
+          <div>
+            <h3 class="chart-title">Seguridad</h3>
+            <canvas id="barSeguridad" height="160"></canvas>
+          </div>
+          <div>
+            <h3 class="chart-title">Mantenibilidad</h3>
+            <canvas id="barMantenibilidad" height="160"></canvas>
+          </div>
+          <div>
+            <h3 class="chart-title">Escalabilidad</h3>
+            <canvas id="barEscalabilidad" height="160"></canvas>
+          </div>
+        </div>
+        <div class="cards-grid">
+          <div class="card">
+            <h4>Rendimiento — Hecho bien</h4>
+            <ul>
+              <li>Vite y bundling rápido en frontend</li>
+              <li>Consultas moderadas en backend</li>
+            </ul>
+            <h4>Rendimiento — Mejorable</h4>
+            <ul>
+              <li>SSR e imágenes optimizadas</li>
+              <li>Cacheado avanzado en API</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h4>Usabilidad — Hecho bien</h4>
+            <ul>
+              <li>Flujos claros para clientes y reservas</li>
+              <li>Diseño responsive</li>
+            </ul>
+            <h4>Usabilidad — Mejorable</h4>
+            <ul>
+              <li>Accesibilidad (a11y) más profunda</li>
+              <li>Internacionalización (i18n)</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h4>Seguridad — Hecho bien</h4>
+            <ul>
+              <li>JWT básico y validaciones</li>
+              <li>Buenas prácticas en Supabase</li>
+            </ul>
+            <h4>Seguridad — Mejorable</h4>
+            <ul>
+              <li>MFA y RBAC por roles</li>
+              <li>Auditoría y rotación de tokens</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h4>Mantenibilidad — Hecho bien</h4>
+            <ul>
+              <li>Carpetado MVC y componentes React</li>
+              <li>Separación de servicios</li>
+            </ul>
+            <h4>Mantenibilidad — Mejorable</h4>
+            <ul>
+              <li>Tests de integración y unitarios</li>
+              <li>Documentación más completa</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h4>Escalabilidad — Hecho bien</h4>
+            <ul>
+              <li>API modular y endpoints claros</li>
+              <li>Uso de Supabase gestionado</li>
+            </ul>
+            <h4>Escalabilidad — Mejorable</h4>
+            <ul>
+              <li>Colas y workers para tareas pesadas</li>
+              <li>Observabilidad y métricas</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="viabilidad" class="section">
+        <h2>Viabilidad del código en local</h2>
+        <p class="muted">Radar con modularidad, legibilidad, control de complejidad, cobertura de pruebas y mantenibilidad.</p>
+        <canvas id="radarViabilidad" height="200"></canvas>
+        <div class="explain">
+          <p><strong>Problemas detectados:</strong> código espagueti en algunas rutas y controladores; archivos no tan útiles (código muerto) y otros con más de 900 líneas que mezclan responsabilidades.</p>
+          <p><strong>Impacto:</strong> dificulta refactorización, pruebas y agregado de nuevas funciones sin romper flujos.</p>
+          <p><strong>Acciones locales recomendadas:</strong> dividir archivos grandes, eliminar código muerto, extraer helpers, añadir pruebas básicas y documentación corta por módulo.</p>
+        </div>
+      </section>
+
+      <section id="tecnologias" class="section">
+        <h2>Tecnologías usadas — Radar de calidad</h2>
+        <p class="muted">React, Node.js, Supabase y MVC evaluados en los 5 atributos de calidad.</p>
+        <canvas id="radarTecnologiasStack" height="200"></canvas>
+        <div class="explain">
+          <p>Resumen de cómo cada tecnología impacta rendimiento, usabilidad, seguridad, mantenibilidad y escalabilidad en este proyecto.</p>
+        </div>
+      </section>
+
+      <section id="tecnologias-detalle" class="section">
+        <h2>Detalle por tecnología — ¿qué hicimos bien y qué mejorar?</h2>
+        <p class="muted">Gráficas de barras y notas por tecnología.</p>
+        <div class="charts-grid">
+          <div>
+            <h3 class="chart-title">React</h3>
+            <canvas id="barReact" height="160"></canvas>
+          </div>
+          <div>
+            <h3 class="chart-title">Node.js</h3>
+            <canvas id="barNode" height="160"></canvas>
+          </div>
+          <div>
+            <h3 class="chart-title">Supabase</h3>
+            <canvas id="barSupabase" height="160"></canvas>
+          </div>
+          <div>
+            <h3 class="chart-title">MVC</h3>
+            <canvas id="barMVC" height="160"></canvas>
+          </div>
+        </div>
+        <div class="cards-grid">
+          <div class="card">
+            <h4>React</h4>
+            <p><strong>Bien:</strong> Componentización clara, estados y hooks organizados.</p>
+            <p><strong>Mejorable:</strong> Tests de UI, accesibilidad y i18n.</p>
+          </div>
+          <div class="card">
+            <h4>Node.js</h4>
+            <p><strong>Bien:</strong> Endpoints REST bien definidos y middleware básico.</p>
+            <p><strong>Mejorable:</strong> Observabilidad, colas de trabajo y rate limiting.</p>
+          </div>
+          <div class="card">
+            <h4>Supabase</h4>
+            <p><strong>Bien:</strong> Integración rápida, auth y base de datos gestionada.</p>
+            <p><strong>Mejorable:</strong> Políticas de seguridad (RLS) más finas y auditoría.</p>
+          </div>
+          <div class="card">
+            <h4>MVC</h4>
+            <p><strong>Bien:</strong> Separación entre modelos, controladores y rutas.</p>
+            <p><strong>Mejorable:</strong> Documentar contratos y pruebas de integración.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="restaurantes" class="section">
+        <h2>Atributos de restaurantes</h2>
+        <p class="muted">Ejemplo de medición por sede: tiempo de atención, personal, capacidad, ruido, calidad y ubicación.</p>
+        <canvas id="radarRestaurantes" height="180"></canvas>
+        <div class="explain">
+          <p><strong>Dónde se guardarían estos tradeoffs:</strong> en la entidad <code>sedes</code> (o <code>mesas</code>) como un campo JSON llamado <code>tradeoffs</code> con categorías y puntuaciones. Ver <a href="#mapeo">esquema propuesto</a> abajo.</p>
+        </div>
+      </section>
+
+      <section id="flujos" class="section section-large">
+        <h2>Evaluaciones grandes por flujos de la página</h2>
+        <p class="muted">Cinco radares (tablas de cinco puntas) centrados en esta aplicación: Clientes, Menús, Mesas, Reservas y Sedes. Todo en entorno local.</p>
+        <div class="radars-grid">
+          <div>
+            <h3 class="chart-title">Flujo de Clientes</h3>
+            <canvas id="radarClientes" height="220"></canvas>
+            <div class="explain">
+              <p><strong>Qué funciona bien:</strong> navegación clara a secciones de clientes, listado y búsqueda básica con feedback visual.</p>
+              <p><strong>Mejoras por tiempo:</strong> filtros avanzados, paginación y mensajes de error más descriptivos.</p>
+              <p><strong>Decisiones:</strong> priorizar visibilidad y tiempos de respuesta locales aceptables sobre funcionalidades complejas todavía no críticas.</p>
+            </div>
+          </div>
+          <div>
+            <h3 class="chart-title">Gestión de Menús</h3>
+            <canvas id="radarMenus" height="220"></canvas>
+            <div class="explain">
+              <p><strong>Qué funciona bien:</strong> estructura clara de categorías y platos, edición básica y visualización rápida.</p>
+              <p><strong>Mejoras por tiempo:</strong> previsualización de imágenes, control de versiones del menú y validación avanzada.</p>
+              <p><strong>Decisiones:</strong> optimizar la edición simple y mantener consistencia en estilos y nombres.</p>
+            </div>
+          </div>
+          <div>
+            <h3 class="chart-title">Mesas</h3>
+            <canvas id="radarMesas" height="220"></canvas>
+            <div class="explain">
+              <p><strong>Qué funciona bien:</strong> visual del estado de mesas, capacidad y asignación básica.</p>
+              <p><strong>Mejoras por tiempo:</strong> vista de ocupación en tiempo “simulado”, reglas de asignación y conflictos.</p>
+              <p><strong>Decisiones:</strong> asegurar que el flujo sea comprensible y que las acciones locales respondan rápido.</p>
+            </div>
+          </div>
+          <div>
+            <h3 class="chart-title">Reservas</h3>
+            <canvas id="radarReservas" height="220"></canvas>
+            <div class="explain">
+              <p><strong>Qué funciona bien:</strong> formulario con validaciones mínimas, confirmación visible y navegación de retorno.</p>
+              <p><strong>Mejoras por tiempo:</strong> validación de conflictos de horarios, recordatorios y estados intermedios más ricos.</p>
+              <p><strong>Decisiones:</strong> simplicidad del formulario y mensajes claros antes de agregar pasos adicionales.</p>
+            </div>
+          </div>
+          <div>
+            <h3 class="chart-title">Sedes</h3>
+            <canvas id="radarSedes" height="220"></canvas>
+            <div class="explain">
+              <p><strong>Qué funciona bien:</strong> detalle básico por sede, ubicación y atributos iniciales visibles.</p>
+              <p><strong>Mejoras por tiempo:</strong> comparación entre sedes, filtros y visualización avanzada de atributos.</p>
+              <p><strong>Decisiones:</strong> mantener una ficha simple por sede y ampliar atributos cuando sea necesario.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="fallos" class="section section-large">
+        <h2>Fallos críticos en la página (local)</h2>
+        <div class="explain">
+          <ul>
+            <li>Aunque se suben a la base de datos, las <strong>mesas</strong> y <strong>reseñas</strong> no se muestran en las tablas del administrador.</li>
+            <li>No se puede agregar el <strong>editable de platillos</strong> a “<em>Especiales de la casa</em>” o “<em>de noche</em>” en los platos.</li>
+            <li>Hay componentes con estados acoplados que provocan inconsistencias al recargar la vista.</li>
+          </ul>
+          <p><strong>Notas:</strong> Son issues locales de la UI y del flujo de datos. No se evalúa nada de despliegue remoto.</p>
+        </div>
+      </section>
+
+      <section id="mapeo" class="section">
+        <h2>Mapeo detallado de evaluaciones a atributos de restaurantes (DB local)</h2>
+        <div class="explain">
+          <p>Las evaluaciones que ves en esta página se guardan como un objeto <code>tradeoffs</code> en cada <code>sede</code> y pueden ampliarse para <code>mesas</code> y <code>reservas</code>. Ejemplo detallado:</p>
+          <pre class="code-block">{
+  "tradeoffs": {
+    "clientes": {
+      "claridad_flujo": 8,
+      "rendimiento_local": 7,
+      "errores_visibles": 6,
+      "accesibilidad": 7,
+      "satisfaccion": 7
+    },
+    "menus": {
+      "navegacion": 8,
+      "edicion_basica": 7,
+      "validacion": 6,
+      "consistencia_visual": 8,
+      "carga_local": 7
+    },
+    "mesas": {
+      "estado_visual": 7,
+      "asignacion": 6,
+      "capacidad": 8,
+      "conflictos": 5,
+      "tiempo_respuesta_local": 7
+    },
+    "reservas": {
+      "formulario": 7,
+      "validaciones": 6,
+      "feedback": 7,
+      "claridad_pasoss": 7,
+      "confirmacion": 7
+    },
+    "sedes": {
+      "ubicacion": 9,
+      "detalle": 7,
+      "comparacion": 5,
+      "atributos_visibles": 7,
+      "coherencia_ui": 8
+    }
+  },
+  "ultima_revision": "2025-11-07",
+  "origen": "evaluacion_local"
+}</pre>
+          <p><strong>Dónde se usan:</strong> estos valores alimentan el radar “Atributos de restaurantes” por sede y los radares de flujos cuando se filtra por una sede concreta. En local, se podrían cargar desde Supabase o un JSON local y mostrarlos en la ficha de la sede.</p>
+          <p><strong>Granularidad opcional:</strong> añadir <code>tradeoffs</code> a <code>mesas</code> para estados y capacidad, y a <code>reservas</code> para validar experiencia de formulario. Todo en entorno local.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>IFROS-Gam</p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>

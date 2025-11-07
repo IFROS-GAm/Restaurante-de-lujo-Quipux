@@ -1,0 +1,25 @@
+# Node / Vite
+node_modules/
+dist/
+*.log
+.DS_Store
+
+# IDE / tooling
+.vscode/
+.idea/
+
+# Env vars
+.env
+.env.local
+backend/.env
+frontend/.env
+frontend/.env.local
+
+# Build outputs
+frontend/dist/
+backend/coverage/
+
+# Misc
+*.tmp
+*.cache
+**/.cache

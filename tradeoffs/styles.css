@@ -1,0 +1,48 @@
+:root {
+  --bg: #f6e9df;
+  --text: #4a2b1c;
+  --muted: #7a6a5f;
+  --accent1: #62c3b4;
+  --accent2: #f6a623;
+  --card: #ffffff;
+  --shadow: rgba(0,0,0,0.08);
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+  background: var(--bg); color: var(--text);
+}
+
+.site-header { text-align: center; padding: 24px 16px; }
+.site-header h1 { margin: 0; font-size: 28px; }
+.site-header .sub { margin: 6px 0 12px; color: var(--muted); }
+.nav { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.nav a { color: var(--text); text-decoration: none; background: #f2d9c9; padding: 6px 10px; border-radius: 8px; box-shadow: 0 2px 4px var(--shadow); }
+.nav a:hover { background: #eecdbb; }
+
+.container { max-width: 980px; margin: 0 auto; padding: 16px; }
+.section { background: var(--card); border-radius: 14px; padding: 18px; margin: 16px 0; box-shadow: 0 6px 16px var(--shadow); }
+.section h2 { margin-top: 0; }
+.muted { color: var(--muted); }
+.explain { margin-top: 10px; line-height: 1.6; color: var(--text); }
+.code-block { background: #fbf6f2; border: 1px solid #eadbd0; padding: 10px; border-radius: 8px; overflow: auto; }
+
+.site-footer { text-align: center; padding: 20px; color: var(--muted); }
+
+canvas { background: #fff; border-radius: 12px; }
+
+/* Nuevos estilos para grids y tarjetas */
+.charts-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; align-items: start; }
+.cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-top: 16px; }
+.card { background: #fff; border: 1px solid #eadbd0; border-radius: 12px; padding: 12px; box-shadow: 0 4px 10px var(--shadow); }
+.card h4 { margin: 0 0 8px; }
+.chart-title { margin: 0 0 8px; color: var(--text); font-weight: 600; }
+
+.radars-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; align-items: start; }
+
+/* Secciones grandes para más texto explicativo */
+.section-large { padding: 24px; }
+.section-large .explain p { margin: 6px 0; }
+.section-large .explain { font-size: 15px; }
